@@ -22,9 +22,27 @@
  }
 
 
- .fragment.visible:not(.current-fragment) {
+ .lit1.fragment.visible:not(.current-fragment) {
   display: none;
   height:0px;
   line-height: 0px;
   font-size: 0px;
+}
+
+.reveal .slide-number {
+  font-size: 24pt;
+  color: #ffffff;
+background-color: black; }
+
+#bg_platform a img {
+ margin-top: 0px;
+}
+
+.oblique.li:last-child {
+  list-style-type: none; 
+}
+
+.scrollable-slide {
+  height: 800px;
+  overflow-y: auto !important;
 }

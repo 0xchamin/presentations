@@ -1,0 +1,128 @@
+vision
+========
+
+some of the characteristics we want can be addressed with HPC ???
+
+add these to discussion. 
+(HPC hels to accellerate long run jobs)
+
+Recommondation/Conclusion 
+-- fully fleged system should incoorporate these characteristics 
+Vision as a Recommondation 
+to reach this vision we need to combine approaches from HPC, spatial data systems, 
+(hence this is what researchers should focus on)
+
+
+
+Future direction:
+- what I want to do in the future ( I want to use HPC for this and DC for aht)
+e.g. HPC for inter query parallism, etc. DC for batch processing
+
+what already done, (e.g. lessons learn from spatial data management)
+
+data intensive
+compute intensive
+vector raster
+location query  
+feature query
+highly scalable
+data volume
+
+
+Final : Requirements for fully fleged ALS 
+
+a fully fleged system should draw from different areas.  and incoorporate these 
+characteristics 
+  desired requirements for LiDAR data system, 
+  in my opinion fully fledged system should have these characteristics
+  doesn't exists at the moment, and here it is futuere. 
+
+    querying --> location queries, feature queries, location feature queries, temporal queries,
+  multiple indexes
+  loading,
+  scalable storage,
+  concurrent access to large volume of data
+  efficient encoding
+  derivation of features 
+  integration with imagery data
+  fusion with imagery data 
+  batch processing
+  stream processing, 
+  data export, 
+  feature extraction from LiDAR Data, 
+  storage of FWF LiDAR and discrete LiDAR 
+  space-based-index 
+  object based index
+LoD visualization
+
+
+lessons learn from big systems,
+- hardware accelleration,
+- adaptor based modular implementaiton
+-  
+- adoption of open source distributed tools and software
+
+lessons from HPC 
+- hpc is mainly suitable for tighly coupled
+- compute intensive characteristics can adopt from HPC, 
+- query processing also taking a lot of time [parallel filtering]
+- point cloud processing already 
+- FEATURE derivation, extraction (ML pipeline)
+
+
+
+define a broader spectrum of functionalities. 
+
+
+Tests:
+- coregistration
+
+pre-requisites:
+co-registration
+
+Introduciton:
+
+Steady evolution of Mapping technology is leading to an increasing availability of multi sensor geospatial datasets
+- imaging systems are frequently adopted by mapping community
+- LiDAR system 
+
+sophisticated multi-headed frame cameras, line cameras are being used in
+imaging systems, 
+
+- improved performance of global navigation satelite system(GNSS),
+interial navigation system (INS) technology having a positive impact 
+
+- increased accuracy of direct georeferencing systems leading to widespread 
+implementaiton of LiDAR systems for 3D data collection.
+
+The complementary nature of the spectral and spatial data acquired by imaging 
+and LiDAR systems is motivating their integration for a better description of 
+the object of space. 
+
+A diverse range of spatial data acquisition systems are now available onboard satellite, aerial, and ter- restrial mapping platforms
+
+- imaging systems evolved from single headed cameras to
+ multi-headed cameras to pushbroom scanners (line cameras)
+- advent of low-cost digital frame cameras ar increasingly being adopted 
+
+- LiDAR scanning: fast and cost effective 3D data acquisition technology 
+(LiDAR got tractin with the advent of increased accuracy and affordable GNSS/INS) systems 
+
+characteristics of the acquired spatial and spectral data by passive imaging and
+LiDAR systems, one can argue that their integration will be beneficial for an accurate and better description of the object space.
+Laser scanning and photogrammetry are powerful 3D data acquisition methods providing both overlapping and complementary information
+
+photogrammetric georeferencing GCP or GNSS/INS 
+LiDAR GNSS/INS 
+
+
+Use-cases of LiDAR and imagery integration: Spatial integration helps these aspects ()
+- 3D modeling and reconstruction 
+-  recognition and classification of objects 
+- generation of photorealistic 3D models 
+- automatic classification of landuse 
+
+registration --> same coordinate system: 
+
+(Cyber Physical infrastructure)
+
