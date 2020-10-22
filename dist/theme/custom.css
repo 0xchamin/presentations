@@ -27,7 +27,40 @@
   height:0px;
   line-height: 0px;
   font-size: 0px;
+
 }
+
+/* .lit1.fragment.visible:not(.current-fragment) {
+  opacity: 0;
+  display:none;
+  transition: opacity 2s linear;
+  -webkit-transition: opacity 2s linear;
+  -moz-transition: opacity 2s linear;
+  -o-transition: opacity 2s linear;
+  -ms-transition: opacity 2s linear;
+
+  -webkit-transition: opacity 2s, visibility 2s;
+  transition: opacity 2s, visibility 2s;
+} */
+
+/* .reveal .slides section .fragment {
+  opacity: 0;
+  display: none; 
+  transition: opacity 2s linear;
+  -webkit-transition: opacity 2s linear;
+  -moz-transition: opacity 2s linear;
+  -o-transition: opacity 2s linear;
+  -ms-transition: opacity 2s linear;
+}
+.reveal .slides section .fragment.current-fragment {
+  opacity: 1;
+  display: inline;
+  transition: opacity 2s linear;
+  -webkit-transition: opacity 2s linear;
+  -moz-transition: opacity 2s linear;
+  -o-transition: opacity 2s linear;
+  -ms-transition: opacity 2s linear;
+} */
 
 .reveal .slide-number {
   font-size: 24pt;
@@ -46,3 +79,9 @@ background-color: black; }
   height: 800px;
   overflow-y: auto !important;
 }
+
+/* .myVisible  { 
+  -webkit-animation: myVisible 2s;
+  -moz-animation: myVisible 2s;
+  animation: myVisible2s;
+} */
