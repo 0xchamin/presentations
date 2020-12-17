@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>LIDS Magazine - Scalable Data Systems for LiDAR and Remotely Sensed Imagery Data Integration</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white-edit.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/custom.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<!-- <a href="https://revealjs.com">
+						<img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</a> -->
+					
+					<!-- <img width="300" style="float: left;" src="http://static.slid.es.s3.amazonaws.com/support/insert-video.png">
+    				<img width="300" style="float: right;" src="http://static.slid.es.s3.amazonaws.com/support/insert-video.png"> -->
+					 <!-- <a><img src="images/ucd.svg" style="height: 210px; float: left; margin-top:  38px" class="demo-log"></a> -->
+
+					<!-- <a><img src="images/ua.jpg" style="height: 150px; float: right" class="demo-log"></a>
+					<div style="clear:both;"></div> --> 
+					<h2>Scalable Data Systems for  LiDAR and  Imagery <br/>Data Integration</h2>
+					<hr class="colored" />
+					
+						<small style=" color: #2185c5; font-size: 0.6em; ">PhD Stage-2 Transfer Assesment
+					</small>
+<br/>
+						<small style=" color: #2185c5; font-size: 0.7em; ">Chamin Nalinda<br/>
+						</small>
+						<div style="clear:both;"></div> 
+						<div class="column" style="float:left;  width: 50%">
+						<!-- <small style="color: #677480; text-align: left; ">Chamin Nalinda Lokugam Hewage<br/>
+						
+						Student ID: 18209044
+						</small> -->
+						<a><img src="images/ucd.svg" style="height: 180px; float: left; margin-top:  2px" class="demo-log"></a> 
+						<small style="font-size: 0.6em; color: #677480; text-align: left;">Primary supervisor:<br/>Dr. Michela Bertolotto<br/>&nbsp;</small>
+						<small style="font-size: 0.6em; color: #677480; text-align: left;">Secondary supervisor:<br/>Dr. Nhien-An Le-Khac</small>
+						</div> 
+						<div class="column" style="float:right; width: 50%">
+							<a><img src="images/ua.jpg" style="height: 80px; margin:  2px;  " class="demo-log"></a><br/>
+							<!-- <small style="color: #677480; text-align: left; ">Supervisor: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dr. Michela Bertolotto<br/>
+								Co-supervisor: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr. Nhien An Le Khac<br/> -->
+								<!-- DSP Chair:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  Dr. Gavin McArdle	<br/>
+								DSP Advisor:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dr. Liliana Pasquale <br/>
+								Special mentions: Dr. Anh Vu Vo -->
+								<!-- </small> -->
+								<a><img src="images/sfi-1.png" style="height: 80px; margin: 2px; " class="demo-log"></a>
+						</div>
+						<div style="clear:both;"></div> 
+						<!-- <a><img src="images/ua.jpg" style="height: 78px; float: left; " class="demo-log"></a> -->
+						<!-- <a><img src="images/ucd.svg" style="height: 0px; " class="demo-log"></a>  -->
+
+					<!-- <a><img src="images/sfi-1.png" style="height: 78px; float: right" class="demo-log"></a> -->
+				</section>
+				<section>
+					<h2 style="margin-top: 25px;">
+                       <!-- Voluminious complex integrated system -->
+                       <!-- Massive complex 2D-3D data -->
+                       Background
+                       <!-- Volume, complexity, integration -->
+                        
+                    </h2>
+                    <!-- <blockquote style="text-align: left; margin-left: 2px;;">
+                        &#8220;Remote sensing technology based geographical mapping is a prelevent activity.&#8221;
+                    </blockquote> -->
+					
+					
+					<div style="text-align: left; float: left; width: 66%; ">
+
+                        <img src="images/background/background.svg" style=" display: block; margin: 0 auto;"/>
+			
+						</div><!--/left div-->
+						<div  style="text-align: left; float: right;  width: 34%;">
+                            <p style="text-align: left;">Gaps</p>
+							<ol style="font-size: 0.45em">
+								<li>No comparable systems exist.</li>
+								<li>Most integrated systems are imagery systems.
+									(<em style="font-size: 70%;">Lewis2017 et al. (2017)</em>, <em  style="font-size: 70%;">Giuliani2017 et al. (2017)</em>, <em style="font-size: 70%;">Baumann et al. (2016)</em>)
+								</li>
+								<li>Existing point cloud and imagery systems are not spatially integrated.
+									(<em style="font-size: 70%;">Whitby et al. (2017)</em>, <em  style="font-size: 70%;">Baumann et al. (2017)</em>)
+							  
+							</li>
+                                <li>
+									Poor scalability of most LiDAR systems. 
+									(<em style="font-size: 70%;">Liu et al. (2018)</em>, <em  style="font-size: 70%;">VanOosterom et al. (2018)</em>, <em style="font-size: 70%;">Meyer et al. (2019)</em>)
+								</li>
+                                    
+                                   
+                                <li>
+                                    "Data lake" & "Polystore" systems not well developed topics.
+                                </li>
+                                
+                            </ol>					
+
+
+
+						</div><!--/right div-->
+					
+						<div style="clear: both;"></div>
+						
+						<blockquote style="text-align: left;">
+							&#8220;How to enable efficient access to spatially integrated LiDAR and imagery data in a scalable manner?&#8221;
+							
+						</blockquote>
+				</section>
+				<section>
+					<h2>Research Questions</h2>
+					 <div class="r-stack">
+							<img src="images/rq2/all.png" style="max-width: 1000px; display: block; margin: 0 auto;" class="fragment fade-in-then-out"/>
+							<img src="images/rq2/rq1.png" style="max-width: 1000px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+							<img src="images/rq2/all.png" style="max-width: 1000px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+							<img src="images/rq2/rq2.png" style="max-width: 1000px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+							<img src="images/rq2/all.png" style="max-width: 1000px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+							<img src="images/rq2/rq3.png" style="max-width: 1000px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+						</div> 
+				</section>
+				<section>
+					<section>
+						<h2>Research Questions</h2>
+					<!-- 	<p class="" style="text-align: left;"> 
+                            &#8220;Scalable Data Systems for LiDAR and Imagery Data Integration&#8221;</p>
+                            &#8220;develop highly scalable LiDAR and imagery data systems through their spatial integration 
+							&#8221;</p> -->
+							<!-- <div class="r-stack">
+								<img src="images/feedback/rq2.svg" style="max-width: 1250px; display: block; margin: 0 auto;" class="fragment fade-in-then-out"/>
+								<img src="images/feedback/rq1.svg" style="max-width: 1200px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+								<img src="images/feedback/rq22.svg" style="max-width: 870px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+								<img src="images/feedback/rq3.svg" style="max-width: 870px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+							</div> -->
+	
+							
+	
+					
+						<ol>
+							<li >
+							<p>How to construct a <b><span style="color: red;">global level spatial index</span></b>, in a distributed environment, 
+								atop local  indexes of LiDAR and imagery data that are being managed in distributed storage environments?
+								 (<strong>RQ1</strong>)
+								 
+							</p>
+							<small style="font-size:0.7em"><b>Hypothesis</b>: Develop a multi-database oriented, global level index atop local indexes of LiDAR and image databases.</small>
+							<!-- <img src="images/rq/rq1.svg" style="max-width: 600px; display: block; margin: 0 auto;"/>	
+					 -->
+					 <!-- <small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>: It will be possible to construct a multi-database oriented,
+						global level, meta-index in a distributed environment to spatially integrate LiDAR and imagery data based on the choices made to local indexes</small>
+					 -->
+						<!-- <ol><strong><i>Hypothesis</i></strong>:</ol>	 -->
+					</li>
+						<li class="">
+							<p>How to <b> <span style="color: red;">define an efficient integrated data system architecture</span></b> to perform scalable spatial integration of LiDAR and imagery models in distributed environment(s) (<strong>RQ2</strong>)</p>
+							
+							<small style="font-size: 0.7em;"> <b>Hypothesis</b>: Analyse logically centralized view (e.g. DataLake) and logically de-centralized view architectures (e.g. Polystores) in terms of scaling, storage models, computing paradigms, and requirements/objectives etc.
+							</small>
+							<!-- <img src="images/rq/rq2.svg" style="max-width: 600px; display: block; margin: 0 auto;"/>
+						 -->
+						 <!-- <small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>:
+							It will be possible to define a distributed data system architecture for scalable LiDAR and imagery data integration by analysing logically centralized view and logically de-centralized view integrated architectures, the two state-of-the-art architectural approaches, in
+							terms of their scaling, storage models, computing paradigms and requirements/objectives etc.
+						</small> -->
+						</li>
+						<li class="">
+							<p>
+							For <b><span style="color: red;">UrbanARK case study</span></b>, how to develop a scalable & performance efficient <b><span style="color: red;">data lake</span></b> that perform spatial integration between LiDAR and imagery storage models? (<strong>RQ3</strong>) </p> 
+							
+							<small style="font-size: 0.7em;"><b>Hypothesis</b> : Integrate LiDAR models and imagery models in a distributed computing and distributed database
+								oriented logically centralized view architecture to improve performance:
+								
+							</small>
+							<div style="text-align: left; font-size: 0.8em;">
+								<ul>
+									<li>
+										location based queries - <em>response time</em>, <em>throughput</em>
+									</li>
+									<li>
+										storage
+									</li>
+									<li>
+										data loading - <em>throughput</em>
+									</li>
+								</ul>
+							</div>
+							
+							
+							<!-- <small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>:
+								It will be possible to integrated LiDAR storage models and
+imagery storage models in a distributed computing and distributed database oriented logically centralized architecture - a data lake, while focusing on improving integrated query response time, throughput of data
+loading, and minimizing disk utilization of LiDAR and imagery data.
+							</small> -->
+							
+							<!--
+It will be possible to integrated LiDAR storage models and
+imagery storage models in a distributed computing and distributed database oriented logically centralized architecture - a data lake, while focusing on improving integrated query response time, throughput of data
+loading, and minimizing disk utilization of LiDAR and imagery data.
+
+								It will be possible to define a distributed data system architecture for scalable LiDAR and imagery data integration by analysing logically centralized view and logically de-centralized view integrated architectures, the two state-of-the-art architectural approaches, in
+terms of their scaling, storage models, computing paradigms and requirements/objectives etc.
+							-->
+
+
+							<!-- How to perform scalable integration between LiDAR and imagery storage models 
+								within a <b><span class="fragment highlight-red">data lake environment</span></b> while 
+								devising a <b><span class="fragment highlight-red">framework </span></b> to evaluate the <span class="fragment highlight-red"><b>performance</b></span> of the data lake for the
+								 execution of integrated <b><span class="fragment highlight-red">point queries</span></b>, <b><span class="fragment highlight-red">range queries</span></b> and <b><span class="fragment highlight-red">window queries</span></b>? (<strong>RQ3</strong>) </p> 
+							
+							<img src="images/rq/rq333.svg" style="max-width: 600px; display: block; margin: 0 auto;"/> -->
+					
+						</li> 
+						</ol>
+					</section><!--/rq slide 1-->
+					
+					<section>
+						<h2 style="margin-top: 70px;">Research Questions</h2>
+
+						<ol style="list-style-type:none;">
+							<li class="lit1 fragment fade-in-fade-out">
+								<p><strong>RQ1</strong>:
+									
+									How to construct a global level spatial index, in a distributed environment, atop local indexes of LiDAR and imagery data that are being managed in distributed storage environments? 
+								
+								</p>
+								
+								
+								<small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>:
+									
+									Develop a multi-database oriented, global level index atop local indexes of LiDAR and image databases	
+									<br/></small>
+							
+								<img src="images/feedback/modela.svg" style="max-width: 600px; display: block; margin: 20px auto;"/>	
+							</li>
+							<li class="lit1 fragment fade-in-fade-out">
+								
+								<p><strong><b>RQ 2</b></strong>: 
+									
+									How to define an efficient integrated data system architecture to perform scalable spatial integration of LiDAR and imagery models in distributed environment(s)?
+								
+								</p>
+							<!-- <img src="images/rq/rq2.svg" style="max-width: 600px; display: block; margin: 0 auto;"/>
+						 -->
+						 <small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>:
+						
+							Analyse logically centralized view (e.g. DataLake) and logically de-centralized view architectures (e.g. Polystores) in terms of scaling, storage models, computing paradigms, and requirements/objectives etc.
+						</small>
+								<!-- <img src="images/feedback/rq222.svg" style="max-width: 600px; display: block; margin: 10px auto;"/> -->
+
+
+								<div class="column" style="float:left;  width: 50%">
+									<img src="images/feedback/rq222_111.svg" style="max-width: 450px; display: block; margin: 50px auto;"/>
+								</div> 
+									<div class="column" style="float:right; width: 50%">
+										<img src="images/feedback/rq222_2.svg" style="max-width: 450px; display: block; margin: 50px auto;"/>
+									</div>
+									<div style="clear:both;"></div> 
+
+
+							</li>
+							<li class="lit1 fragment fade-in-fade-out">
+								<!-- <p><strong>RQ3</strong>: How to perform scalable integration between LiDAR and imagery storage models within a data lake environment while devising a framework to evaluate the performance of the data lake for the execution of integrated point queries, range queries and window queries? </p> 
+							 -->
+							 <p>
+								<strong><b>RQ 3</b></strong>: 
+								For UrbanARK case study, how to develop a scalable & performance efficient data lake that perform spatial integration between LiDAR and imagery storage models?
+								</p>
+								
+								<small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>:
+									Integrate LiDAR models and imagery models in a distributed computing and distributed database oriented logically centralized view architecture to improve performance:
+								</small>
+								<div style="text-align: left; font-size: 0.8em;">
+									<ul>
+										<li>
+											location based queries - <em>response time</em>, <em>throughput</em>
+										</li>
+										<li>
+											storage
+										</li>
+										<li>
+											data loading - <em>throughput</em>
+										</li>
+									</ul>
+								</div>
+								<img src="images/feedback/image_model_a.png" style="max-width: 560px; display: block; margin: 10px auto;"/>
+							</li>
+						</ol>
+						
+                    </section>
+                    <!--/section 2-->
+			
+
+				
+				
+				</section>
+				<section>
+					<section>
+						<h2>Progress to Date</h2>
+	
+						<div class="column" style="float:left;   width: 50%;">
+							<p style="text-align:left;">1. 30 credits &#9745;</p>
+							<div style="text-align: left; float: left;">
+								<ul style="list-style: none;""  >
+									<li  style="text-align:left; font-size: 80%;" >&#9654; <strong><i>HPC</i></strong> (A-)</li>
+									<li  style="text-align:left; font-size: 80%;"> &#9654;<strong><i> Big Data Programming</i></strong> (A-)</li>
+						
+								</ul>
+							</div>
+							<div style="clear: both;"></div>
+							<p style="text-align:left;">2. Literature Survey &#9745;</p>
+							<div style="text-align: left; float: left;">
+								<ul style="list-style: none;""  >
+									<li  style="text-align:left; font-size: 80%;" >&#9654; <strong><i>Paper 1</i></strong> :  <progress id="file" max="100" value="95"> 92% </progress></li>
+									<li  style="text-align:left; font-size: 80%;"> &#9654;<strong><i> Paper 2</i></strong> : <progress id="file" max="100" value="50"> 50% </progress></li>
+						
+								</ul>
+							</div>
+							<div style="clear: both;"></div>
+						</div><!--/div -->
+						<div class="column" style="float:right;   width: 50%;">
+							<p style="text-align:left;">3. RQ 1: Global index   </p>
+							<img src="images/progress/rq_1_new.svg" style="max-width: 400px; display: block; margin: 10px auto;"/>
+						</div>
+	
+						<div style="clear: both;"></div>
+					</section>
+					<section>
+						<h2>Progress to Date</h2>
+						<div class="column" style="float:left;   width: 50%;">
+							<p style="text-align:left;">4. RQ 2: Architecture</p>
+							 
+							<div style="text-align: left; float: left;">
+								<ul style="list-style: none; "  >
+									<li  style="text-align:left; font-size: 80%;" >  &#9654; <strong>RO 2.1</strong> : Framework (<span style="font-size: 70%;">in additional slides</span>)   </li>
+									<li  style="text-align:left; font-size: 80%;" >  &#9654; <strong>RO 2.2</strong>: UrbanARK    &#9745; </li>
+						
+								</ul>
+							</div>
+							<!-- <img src="images/feedback/RQ2-vision.svg" style="max-height: 200px; display: block; margin: 10px auto;"/> -->
+							
+							<div style="clear: both;"></div>
+							<p style="text-align:left;">5. RQ 3: Data Lake   </p>
+							<div style="text-align: left; float: left;">
+								<ul style="list-style: none;"  >
+									<li  style="text-align:left; font-size: 80%;" >  &#9654; <strong>RO 3.1</strong> : Integration   </li>
+									<!-- <li>  &#9654; <strong>RO 3.2</strong>: Performance </li> -->
+									<ul style="text-align:left; font-size: 80%;">
+										<li>images are geo-referenced   &#9745; </li>
+										<li>meta-data repository   &#9745; </li>
+										<li>integration tests are planned</li>
+										<!-- <li>Local </li> -->
+									</ul>
+								</ul>
+								<img src="images/progress/geo.png" style="max-width: 400px; display: block; margin: 10px auto;"/>
+							</div>
+						</div><!--/div -->
+						<div class="column" style="float:right;   width: 50%;">
+							<p style="text-align:left;">5. RQ 3: Data Lake (contd)  </p>
+							<!-- <img src="images/progress/rq_1_new.svg" style="max-width: 400px; display: block; margin: 10px auto;"/> -->
+							<div style="text-align: left; float: left;">
+								<ul style="list-style: none;"  >
+									<li  style="text-align:left; font-size: 80%;" >  &#9654; <strong>RO 3.2</strong> : Performance   </li>
+									<!-- <li>  &#9654; <strong>RO 3.2</strong>: Performance </li> IEEE BigData 2019, [2] 
+
+-->
+									<ul style="text-align:left; font-size: 80%;">
+										<li>IEEE BigData (2019)</li>
+										<li>ISPRS Congress 2020</li>
+										<!-- <li>Local </li> -->
+									</ul>
+								</ul>
+								<img src="images/progress/progress_to_date.png" style="max-width: 380px; display: block; margin: 5px auto;"/>
+							</div>
+						</div>
+						<div style="clear: both;"></div>
+					</section>
+				</section>
+				
+
+
+
+                <section>
+					<h2>Future Plan</h2>
+					<div style="text-align: left; ">
+						<ul style=" text-align: left;">
+							<li>Continue Literature</li>
+							<li>RO 1.4 - evaluate global index</li>
+							<li>RO 2.1 - complete conceptual framework</li>
+							<li>All objectives of RQ 3</li>
+							<li>Publications</li>
+						</ul>
+					</div>
+					
+                    <img src="images/future/sta_tl_updated-new.svg" style="max-width: 900px; display: block; margin: 0 auto;"/>
+                    
+				</section>
+				<section>
+					<h3>Additional slides</h3>
+				</section>
+			<section>
+				<h2>
+					Targeted venues
+				</h2>
+				<!-- <p style="text-align: left;">Targeted venues</p> -->
+                    <ul style="font-size:x-large; text-align: left;">
+                        <li>ISPRS Congress - <em>The top conference on remote sensing data management</em>.</li>
+                        <li>3D GeoInfo - <em>One of the top conference on 3D data management</em>.</li>
+                        <li>Remote Sensing of Environment (Elsevier) - <em>Impact factor (2019): 9.085.
+                        The most prestigious journal to publish research on remote sensing</em></li>
+                        <li>ISPRS Journal of Photogrammetry and Remote sensing (Elsevier) - <em>Impact
+                            Factor (2019): 7.319</em></li>
+                        <li>
+                            International Journal of Digital Earth (Taylor & Francis) - <em> Impact Factor (2019):
+3.097 </em>
+                        </li>
+                    </ul>
+			</section>
+			<section>
+				<h3>RQ 2: Framework</h3>
+				<img src="images/feedback/RQ2-vision.svg" style="max-width: 800px; display: block; margin: 0 auto;"/>
+			</section>
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script type="text/javascript" src="https://cdn.rawgit.com/seikichi/tiff.js/f03d7965/tiff.min.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				slideNumber: true ,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script>
+			function resetSlideScrolling(slide) {
+    $(slide).removeClass('scrollable-slide');
+}
+
+function handleSlideScrolling(slide) {
+    if ($(slide).height() >= 800) {
+        $(slide).addClass('scrollable-slide');
+    }
+}
+
+Reveal.addEventListener('ready', function (event) {
+    handleSlideScrolling(event.currentSlide);
+});
+
+Reveal.addEventListener('slidechanged', function (event) {
+    resetSlideScrolling(event.previousSlide)
+    handleSlideScrolling(event.currentSlide);
+});
+		</script>
+
+	</body>
+</html>

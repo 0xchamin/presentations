@@ -88,35 +88,33 @@
                     </blockquote> -->
 					
 					
-					<div style="text-align: left; float: left; width: 66%; ">
+					<div style="text-align: left; float: left; width: 60%; ">
 
                         <img src="images/background/background.svg" style=" display: block; margin: 0 auto;"/>
 			
 						</div><!--/left div-->
-						<div  style="text-align: left; float: right;  width: 34%;">
+						<div  style="text-align: left; float: right;  width: 39%;">
                             <p style="text-align: left;">Gaps</p>
-                            <ul style="font-size: 0.45em">
+							<ol style="font-size: 0.48em">
+								<li>No comparable systems exist.</li>
+								<li>Most integrated systems are imagery systems.
+									(<em style="font-size: 70%;">Lewis2017 et al. (2017)</em>, <em  style="font-size: 70%;">Giuliani2017 et al. (2017)</em>, <em style="font-size: 70%;">Baumann et al. (2016)</em>)
+								</li>
+								<li>Existing point cloud and imagery systems are not spatially integrated.
+									(<em style="font-size: 70%;">Whitby et al. (2017)</em>, <em  style="font-size: 70%;">Baumann et al. (2017)</em>)
+							  
+							</li>
                                 <li>
-                                    Poor scalability.</li>
-                                    <li>Most integrated remote sensing systems are imagery systems.
-                                        (<em>Australian Data Cube</em>, <em>Swiss Data Cube</em>, <em>EarthServer</em>)
-                                    </li>
-                                    <li>Existing point cloud and imagery systems are not spatially integrated (e.g. <em>RASDAMAN</em>,
-                                    <em>GeoWave</em>)
-                                        <ul>
-                                            <li>
-                                                integrated access not studied and well developed topic.
-                                            </li>
-                                            <li>
-                                                LiDAR point cloud data not stored in their native format.
-                                            </li>
-                                        </ul>
-                                </li>
+									Poor scalability of most LiDAR systems. 
+									(<em style="font-size: 70%;">Liu et al. (2018)</em>, <em  style="font-size: 70%;">VanOosterom et al. (2018)</em>, <em style="font-size: 70%;">Meyer et al. (2019)</em>)
+								</li>
+                                    
+                                   
                                 <li>
-                                    Data lake & polystore systems not well developed topics.
+                                    "Data lake" & "Polystore" systems not well developed topics in geo-science research.
                                 </li>
                                 
-                            </ul>					
+                            </ol>					
 
 
 
@@ -125,983 +123,296 @@
 						<div style="clear: both;"></div>
 						
 						<blockquote style="text-align: left;">
-							&#8220;How to enable scalable efficient access to spatially integrated voluminious, complex LiDAR and imagery data ?&#8221;
+							&#8220;How to enable efficient access to spatially integrated LiDAR and imagery data in a scalable manner?&#8221;
 							
 						</blockquote>
-                </section>
-                <section>
-                    <h2>Research Questions</h2>
-            
-                
-                    <ol>
-                        <li >
-                        <p>How to construct a <b><span class="fragment highlight-red">global level</span></b> <b><span class="fragment highlight-red">spatial index</span></b>  
-                            atop local  indexes of LiDAR and imagery data that are being managed in distributed environments?
-                             (<strong>RQ1</strong>)
-                        </p>
-                        <!-- <img src="images/rq/rq1.svg" style="max-width: 600px; display: block; margin: 0 auto;"/>	
-                 -->
-                 <small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>: It will be possible to construct a multi-database oriented,
-                    global level, meta-index in a distributed environment to spatially integrate LiDAR and imagery data based on the choices made to local indexes.</small>
-                
-                    <!-- <ol><strong><i>Hypothesis</i></strong>:</ol>	 -->
-                </li>
-                    <li class="">
-                        <p>How to <b><span class="fragment highlight-red">define an efficient integrated data system architecture</span></b> to perform scalable spatial integration of LiDAR and imagery models in distributed environment(s)? (<strong>RQ2</strong>)</p>
-                        <!-- <img src="images/rq/rq2.svg" style="max-width: 600px; display: block; margin: 0 auto;"/>
-                     -->
-                     <small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>:
-                        It will be possible to define a distributed DS architecture for scalable LiDAR and imagery data integration by analysing logically centralized
-                        view (e.g. data lake) and logically de-centralized view integrated architectures (e.g. polystores), in terms of their scaling, storage models, computing
-                        paradigms and integrated system’s requirements/objectives etc.
-                    </small>
-                    </li>
-                    <li class="">
-                        <p>
-                        How to develop a scalable & performance efficient <b><span class="fragment highlight-red">data lake</span></b> that perform spatial integration between LiDAR and imagery storage models? (<strong>RQ3</strong>) </p> 
-                        
-                        
-                        <small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>:
-                            : It will be possible to integrated LiDAR storage models and imagery storage models in a distributed computing and distributed database
-oriented logically centralized architecture - a data lake, while focusing on
-improving integrated query response time, and
-minimizing disk utilization of LiDAR and imagery data.
-
-
-                        </small>
-                        
-                        <!--
-It will be possible to integrated LiDAR storage models and
-imagery storage models in a distributed computing and distributed database oriented logically centralized architecture - a data lake, while focusing on improving integrated query response time, throughput of data
-loading, and minimizing disk utilization of LiDAR and imagery data.
-
-                            It will be possible to define a distributed data system architecture for scalable LiDAR and imagery data integration by analysing logically centralized view and logically de-centralized view integrated architectures, the two state-of-the-art architectural approaches, in
-terms of their scaling, storage models, computing paradigms and requirements/objectives etc.
-                        -->
-
-
-                        <!-- How to perform scalable integration between LiDAR and imagery storage models 
-                            within a <b><span class="fragment highlight-red">data lake environment</span></b> while 
-                            devising a <b><span class="fragment highlight-red">framework </span></b> to evaluate the <span class="fragment highlight-red"><b>performance</b></span> of the data lake for the
-                             execution of integrated <b><span class="fragment highlight-red">point queries</span></b>, <b><span class="fragment highlight-red">range queries</span></b> and <b><span class="fragment highlight-red">window queries</span></b>? (<strong>RQ3</strong>) </p> 
-                        
-                        <img src="images/rq/rq333.svg" style="max-width: 600px; display: block; margin: 0 auto;"/> -->
-                
-                    </li> 
-                    </ol>
-                </section><!--/rq slide 1-->
-                <section>
-                    <h2>Progress to Date</h2>
-                    <div class="column" style="float:left;   width: 40%; border-right-color: paleturquoise solid 1px;">
-                        <p style="text-align:left;">1. 30 credits &#9745;</p>
-                        <p style="text-align:left;">2. Literature Survey &#9745;</p>
-                        <div style="text-align: left; float: left;">
-                        <ul style="list-style: none; font-size: medium;" >
-                            <li  style="text-align:left;" >&#9654; <strong><i>Paper 1</i></strong> :  <progress id="file" max="100" value="80"> 80% </progress></li>
-                            <li> &#9654;<strong><i> Paper 2</i></strong> : <progress id="file" max="100" value="50"> 50% </progress></li>
-                
-                        </ul>
-                    </div>
-                    <div style="clear: both;"></div>
-                        <p style="text-align:left;">3. RQ 1: Global index   </p>
-                        <!-- <ul>
-                            <li style="text-align:left;" >a </li>
-                        </ul> -->
-                        <div style="text-align: left; float: left;">
-                            <ul style="list-style: none; text-align: left; font-size: medium;">
-                                <li style="text-align:left;">
-                                    &#9654; <strong>RO 1.1</strong> : Local indexes  &#9745; 
-										<!-- LiDAR - Hilbert SFC (Vo2018)(Vo2016D)
-										<br/>
-										Images - Quadtree/Hilbert SFC (Samet2006) -->
-                                </li>
-                                <li>
-                                    &#9654; <strong>RO 1.2</strong>: Global hashing index   &#9745; 
-                                </li>
-                                <li>&#9654; <strong>RO 1.3</strong>: Global hierarchical index &#9745; 
-                                    <!-- <ul ul style="list-style: none; text-align: left;">
-                                        <li>&#9655; Object-based</li>
-                                        <li>&#9655; Space-based</li>
-                                    </ul>
-                                </li>
-                              <p style="text-align: left;">
-                             - review on spatial indexing<br/>
-                             - review queries of interests<br/>
-                             - experiments /debugging performed (locally and Hadoop)
-
-                            </p> -->
-                        </ul>
-                        </div>
-                        <div style="clear: both;"></div>
-                        <p style="text-align:left;">4. RQ 2:  Architecture   </p>
-                        <div style="text-align: left; float: left;">
-                            <ul style="list-style: none; text-align: left; font-size: medium;">
-                                <li style="text-align:left;">
-                                    &#9654; <strong>RO 2.1</strong> : Framework  
-										<!-- LiDAR - Hilbert SFC (Vo2018)(Vo2016D)
-										<br/>
-										Images - Quadtree/Hilbert SFC (Samet2006) -->
-                                </li>
-                                <li>
-                                    &#9654; <strong>RO 2.2</strong>: UrbanARK architecture   &#9745; 
-                                </li>
-                           
-                        </ul>
-                        </div>
-                        <div style="clear: both;"></div>
-                        <p style="text-align:left;">5. RQ 3:  Data lake   </p>
-                        <div style="text-align: left; float: left;">
-                            <ul style="list-style: none; text-align: left; font-size: medium;">
-                                <li style="text-align:left;">
-                                    &#9654; <strong>RO 3.2</strong> : Efficient encoding  
-									 
-                                </li>
-                                <li>
-                                    &nbsp;
-                                </li>
-                               
-                       
-                        </ul>
-                        </div>
-                        
-                        
-                        <div style="clear: both;"></div>
-                    </div><!--/left -->
-                    <div class="column" style="float: right;width: 58%">
-                        <p style="text-align: left;"> <strong>Publications</strong>:<span style="font-size: medium;">[1] IEEE BigData 2019, [2] ISPRS Congress 2020</span></p>
-                        <img src="images/progress/progress_to_date_2.png" style="max-width: 400px; display: block; margin: 5px auto;"/>
-                       
-                        
-                        
-                
-                        <p style="text-align: left;">RQ 2 Framework</p>
-
-
-                        <img src="images/feedback/RQ2-vision.svg" style="max-height: 200px; display: block; margin: 10px auto;"/>
-                       
-                    </div>
-                    <div style="clear: both;"></div><!--/ clearboth-->
-                    
-                    <span style="text-align:left;">
-                        
-                    </span>
-                    
-                   
-            
-			 
-					 
-                </section><!--/progress-->
-
-                <section>
-                    <h2>Future Plan</h2>
-                    <img src="images/future/sta_tl_updated.svg" style="max-width: 900px; display: block; margin: 0 auto;"/>
-                    <p style="text-align: left;">Targeted venues</p>
-                    <ul style="font-size:medium; text-align: left;">
-                        <li>ISPRS Congress - <em>The top conference on remote sensing data management</em>.</li>
-                        <li>3D GeoInfo - <em>One of the top conference on 3D data management</em>.</li>
-                        <li>Remote Sensing of Environment (Elsevier) - <em>Impact factor (2019): 9.085.
-                        The most prestigious journal to publish research on remote sensing</em></li>
-                        <li>ISPRS Journal of Photogrammetry and Remote sensing (Elsevier) - <em>Impact
-                            Factor (2019): 7.319</em></li>
-                        <li>
-                            International Journal of Digital Earth (Taylor & Francis) - <em> Impact Factor (2019):
-3.097 </em>
-                        </li>
-                    </ul>
-                </section>
-
-                
-                <section>
-                    <h2>test</h2>
-                    <div style="text-align: left; float: left;">
-                        <img src="images/background/platforms.svg" style="max-width: 372px; display: block; margin: 0 auto;"/>
-                        <div style="text-align: left; float: left; height: 300px; ">
-                               
-                            <div class="sketchfab-embed-wrapper" style="margin:5px auto;display: block;">
-                                <iframe title="A 3D model" width="200px;" height="200px;" src="https://sketchfab.com/models/b5f6bcce8ebc44a3b4bbb6b0fef067b3/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-                                <!-- <p style="font-size: 13px; font-weight: normal; margin-left: 50px; color: #4A4A4A;">
-                                    <a href="https://sketchfab.com/3d-models/christ-c hurch-and-dublin-city-council-b5f6bcce8ebc44a3b4bbb6b0fef067b3?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Christ Church and Dublin City Council</a>
-                                    by <a href="https://sketchfab.com/vuvo?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Vũ Võ</a>
-                                    on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>			
-                                </p> -->
-                            </div>
-
-
-                        </div><!-- /left -->
-                        <div  style="text-align: left; float: right; height: 300px; background-color: antiquewhite;">
-                            <img src="images/background/ortho/a.png" style="max-width: 200px; display: block; margin: 5px auto;">
-                        </div><!-- /right -->
-                        <div style="clear: both;"></div>
-                    </div><!-- /left -->
-                    <div  style="text-align: left; float: right; height: 360px;">
-                    Right
-                    </div><!-- /right -->
-                    <div style="clear: both;"></div>
-                </section>
+				</section>
 				<section>
-					<section>
-						<h2>Research Questions</h2>
-					<!-- 	<p class="" style="text-align: left;"> 
-                            &#8220;Scalable Data Systems for LiDAR and Imagery Data Integration&#8221;</p>
-                            &#8220;develop highly scalable LiDAR and imagery data systems through their spatial integration 
-							&#8221;</p> -->
-							<!-- <div class="r-stack">
-								<img src="images/feedback/rq2.svg" style="max-width: 1250px; display: block; margin: 0 auto;" class="fragment fade-in-then-out"/>
-								<img src="images/feedback/rq1.svg" style="max-width: 1200px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
-								<img src="images/feedback/rq22.svg" style="max-width: 870px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
-								<img src="images/feedback/rq3.svg" style="max-width: 870px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
-							</div> -->
-	
-							
-	
-					
-						<ol>
-							<li >
-							<p>How to construct a <b><span class="fragment highlight-red">global level</span></b> <b><span class="fragment highlight-red">spatial index</span></b>, in a distributed environment, 
-								atop local  indexes of LiDAR and imagery data that are being managed in distributed storage environments?
-								 (<strong>RQ1</strong>)
-							</p>
-							<!-- <img src="images/rq/rq1.svg" style="max-width: 600px; display: block; margin: 0 auto;"/>	
-					 -->
-					 <!-- <small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>: It will be possible to construct a multi-database oriented,
-						global level, meta-index in a distributed environment to spatially integrate LiDAR and imagery data based on the choices made to local indexes</small>
-					 -->
-						<!-- <ol><strong><i>Hypothesis</i></strong>:</ol>	 -->
-					</li>
-						<li class="">
-							<p>How to <b><span class="fragment highlight-red">define an efficient integrated data system architecture</span></b> to perform scalable spatial integration of LiDAR and imagery models in distributed environment(s) (<strong>RQ2</strong>)</p>
-							<!-- <img src="images/rq/rq2.svg" style="max-width: 600px; display: block; margin: 0 auto;"/>
-						 -->
-						 <!-- <small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>:
-							It will be possible to define a distributed data system architecture for scalable LiDAR and imagery data integration by analysing logically centralized view and logically de-centralized view integrated architectures, the two state-of-the-art architectural approaches, in
-							terms of their scaling, storage models, computing paradigms and requirements/objectives etc.
-						</small> -->
-						</li>
-						<li class="">
-							<p>
-							How to develop a scalable & performance efficient <b><span class="fragment highlight-red">data lake</span></b> that perform spatial integration between LiDAR and imagery storage models? (<strong>RQ3</strong>) </p> 
-							
-							
-							<!-- <small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>:
-								It will be possible to integrated LiDAR storage models and
-imagery storage models in a distributed computing and distributed database oriented logically centralized architecture - a data lake, while focusing on improving integrated query response time, throughput of data
-loading, and minimizing disk utilization of LiDAR and imagery data.
-							</small> -->
-							
-							<!--
-It will be possible to integrated LiDAR storage models and
-imagery storage models in a distributed computing and distributed database oriented logically centralized architecture - a data lake, while focusing on improving integrated query response time, throughput of data
-loading, and minimizing disk utilization of LiDAR and imagery data.
-
-								It will be possible to define a distributed data system architecture for scalable LiDAR and imagery data integration by analysing logically centralized view and logically de-centralized view integrated architectures, the two state-of-the-art architectural approaches, in
-terms of their scaling, storage models, computing paradigms and requirements/objectives etc.
-							-->
-
-
-							<!-- How to perform scalable integration between LiDAR and imagery storage models 
-								within a <b><span class="fragment highlight-red">data lake environment</span></b> while 
-								devising a <b><span class="fragment highlight-red">framework </span></b> to evaluate the <span class="fragment highlight-red"><b>performance</b></span> of the data lake for the
-								 execution of integrated <b><span class="fragment highlight-red">point queries</span></b>, <b><span class="fragment highlight-red">range queries</span></b> and <b><span class="fragment highlight-red">window queries</span></b>? (<strong>RQ3</strong>) </p> 
-							
-							<img src="images/rq/rq333.svg" style="max-width: 600px; display: block; margin: 0 auto;"/> -->
-					
-						</li> 
-						</ol>
-					</section><!--/rq slide 1-->
-					<section>
-						<h2 style="margin-top: 70px;">Research Questions</h2>
-
-						<ol style="list-style-type:none;">
-							<li class="lit1 fragment fade-in-fade-out">
-								<p><strong>RQ1</strong>: How to construct a global level spatial index, in a distributed environment, atop local  indexes of LiDAR and imagery data that are being managed in distributed storage environments?</p>
-								<small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>: It will be possible to construct a multi-database oriented,
-									global level, meta-index in a distributed environment to spatially integrate LiDAR and imagery data based on the choices made to local indexes<br/></small>
-							
-								<img src="images/feedback/modela.svg" style="max-width: 600px; display: block; margin: 20px auto;"/>	
-							</li>
-							<li class="lit1 fragment fade-in-fade-out">
-								
-								<p>How to <b><span class="fragment highlight-red">define an efficient integrated data system architecture</span></b> to perform scalable spatial integration of LiDAR and imagery models in distributed environment(s) (<strong>RQ2</strong>)</p>
-							<!-- <img src="images/rq/rq2.svg" style="max-width: 600px; display: block; margin: 0 auto;"/>
-						 -->
-						 <small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>:
-							It will be possible to define a distributed data system architecture for scalable LiDAR and imagery data integration by analysing logically centralized view and logically de-centralized view integrated architectures, the two state-of-the-art architectural approaches, in
-							terms of their scaling, storage models, computing paradigms and requirements/objectives etc.
-						</small>
-								<!-- <img src="images/feedback/rq222.svg" style="max-width: 600px; display: block; margin: 10px auto;"/> -->
-
-
-								<div class="column" style="float:left;  width: 50%">
-									<img src="images/feedback/rq222_111.svg" style="max-width: 450px; display: block; margin: 50px auto;"/>
-								</div> 
-									<div class="column" style="float:right; width: 50%">
-										<img src="images/feedback/rq222_2.svg" style="max-width: 450px; display: block; margin: 50px auto;"/>
-									</div>
-									<div style="clear:both;"></div> 
-
-
-							</li>
-							<li class="lit1 fragment fade-in-fade-out">
-								<!-- <p><strong>RQ3</strong>: How to perform scalable integration between LiDAR and imagery storage models within a data lake environment while devising a framework to evaluate the performance of the data lake for the execution of integrated point queries, range queries and window queries? </p> 
-							 -->
-							 <p>
-								How to develop a scalable & performance efficient <b><span class="fragment highlight-red">data lake</span></b> that perform spatial integration between LiDAR and imagery storage models? (<strong>RQ3</strong>) </p> 
-								
-								
-								<small style="font-size: 0.6em;"><strong><i>Hypothesis</i></strong>:
-									It will be possible to integrated LiDAR storage models and
-	imagery storage models in a distributed computing and distributed database oriented logically centralized architecture - a data lake, while focusing on improving integrated query response time, throughput of data
-	loading, and minimizing disk utilization of LiDAR and imagery data.
-								</small>
-								<img src="images/feedback/image_model_a.png" style="max-width: 600px; display: block; margin: 10px auto;"/>
-							</li>
-						</ol>
-						
-                    </section>
-                    <!--/section 2-->
-			
+					<h2>Research Questions</h2>
+					 <div class="r-stack">
+							<img src="images/rq2/all.png" style="max-width: 1000px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+							<img src="images/rq2/rq1.png" style="max-width: 1000px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+							<!-- <img src="images/rq2/all.png" style="max-width: 1000px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/> -->
+							<img src="images/rq2/rq2.png" style="max-width: 1000px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+							<!-- <img src="images/rq2/all.png" style="max-width: 1000px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/> -->
+							<img src="images/rq2/rq3.png" style="max-width: 1000px; display: block; margin: 0px auto;" class="fragment fade-in-then-out"/>
+						</div> 
+				</section>
+				
 
 				
 				
 				</section>
-				<!-- <section>
-					<h2>Progress and Future Work</h2>
-					<img src="images/feedback/timeline.svg" style="max-width: 1000px; margin: 0px;"/>	
-				</section> -->
-
-				<!-- <section>
-					<h2>Progress to date</h2>
-					<p>
-						<p style="text-align: left;">Completion of 30 Credits</p>
-					</p>
-				</section> -->
-
-				<section>
-					<h2>Progress to Date</h2>
-						<!-- <p style="text-align: left;">Completion of 30 Credits</p> -->
-						<p class=""  style="text-align: left;">Completion of all 30 credits</p>
-						<p class="fragment"  style="text-align: left;">Completion of literature survey</p>
-						<ol class="lit1" style="list-style-type:none; display: block; text-align: left;">
-							<li class="lit1 fragment fade-in-fade-out"><strong><i>Paper 1</i></strong> : Current challenges and future directions for scalable distributed aerial LiDAR data systems development.</li>
-							<li class="lit1 fragment fade-in-fade-out"><strong><i>Paper 2</i></strong> : Scalable integrated data systems for LiDAR and imagery data integration: a survey.</li>
-						</ol>
-						<p class="fragment"  style="text-align: left;"><strong>RQ1</strong>: Global Index</p>
-						<ol class="lit1" style="list-style-type:none; display: block; text-align: left;">
-							<li class="lit1 fragment fade-in-fade-out">
-										<strong>RO 1.1</strong> :Identification of suitable local indexes<br/>
-										LiDAR - Hilbert SFC (Vo2018)(Vo2016D)
-										<br/>
-										Images - Quadtree/Hilbert SFC (Samet2006)
-									</li>
-									<li class="lit1 fragment fade-in-fade-out">
-										<strong>RO 1.2</strong>: Selection of a multi-dimensional hashing index as the global index<br/>
-										Hilbert Space Filling Curve (Samet2006)(Laurini1992)
-									</li>
-									<li class="lit1 fragment fade-in-fade-out">
-										<strong>RO 1.3</strong>: Seletion of a hierarchical index as the global index
-										(Samet2006)(Gaede1998)
-										<br/>
-										 <ul>
-											 <li>
-												 Object-based index - R-tree or varient of it
-											 </li>
-											 <li>
-												 Space-based index - Quadtree or varient
-											 </li>
-										 </ul>
-
-									</li>
-						</ol>
-					
-					
-			
-					<p class="fragment" style="text-align: left;"><strong>RQ2</strong>: Integrated Architecture</p>
-
-					<ol class="lit1" style="list-style-type:none; display: block; text-align: left;">
-						<li class="lit1 fragment fade-in-fade-out">
-									<strong>RO 2.1</strong>: Define a framework  
-									<img src="images/feedback/RQ2-vision.svg" style="max-width: 6 00px; display: block; margin: 0 auto;"/>
-								</li>
-                                <li class="lit1 fragment fade-in-fade-out">
-									<strong>RO 2.2</strong>:Selection of integration architecture for UrbanARK  
-									<ul>
-                                        <li>
-                                            store data in native format
-                                        </li>
-                                        <li >
-                                           queries of interests
-                                        </li>
-                                    </ul>
-								</li>
-					</ol>
-
-
-					<p class="fragment" style="text-align: left;"><strong>RQ3</strong>: Performance efficient data lake
-					
-					</p>
-					<ol class="lit1" style="list-style-type:none; display: block; text-align: left;">
-						<!-- <li class="lit1 fragment fade-in-fade-out">
-							<strong>RO 3.1</strong>: Conversion of imagery data to Irish Grid system
-							<img src="images/feedback/geo.png" style="max-width: 750px; display: block; margin: 0 auto;"/>
-						</li> -->
-						<li class="lit1 fragment fade-in-fade-out">
-							<strong>RO 3.2</strong>: Improve performance of data lake
-						</li>
-						<li class="lit1 fragment fade-in-fade-out">
-									<strong>RO 3.2</strong>: Implementation of an efficient encoding strategy for point clouds<br/>
-									(made two publications)
-									 <ul>
-										 <li>
-										<em>IEEE International Conference on Big Data</em>
-										 </li>
-										 <li>
-											<em>ISPRS Congress</em>
-										 </li>
-									 </ul>
-								</li>
-						
-					</ol>
-                </section><!--/progress-->
-
-            
-                
-                <section>
-                    <h2>Future Plan</h2>
-                    <img src="images/future/sta_tl_updated.svg" style="max-width: 900px; display: block; margin: 0 auto;"/>
-                    <p style="text-align: left;">Targeted venues</p>
-                    <ul style="font-size:medium; text-align: left;">
-                        <li>ISPRS Congress - <em>The top conference on remote sensing data management</em>.</li>
-                        <li>3D GeoInfo - <em>One of the top conference on 3D data management</em>.</li>
-                        <li>Remote Sensing of Environment (Elsevier) - <em>Impact factor (2019): 9.085.
-                        The most prestigious journal to publish research on remote sensing</em></li>
-                        <li>ISPRS Journal of Photogrammetry and Remote sensing (Elsevier) - <em>Impact
-                            Factor (2019): 7.319</em></li>
-                        <li>
-                            International Journal of Digital Earth (Taylor & Francis) - <em> Impact Factor (2019):
-3.097 </em>
-                        </li>
-                    </ul>
-                </section>
-
-				<section>
-					<h2>Future Work</h2>
-					<p style="text-align: left;"><strong>RQ 1 (<em>RO 1.4</em>)</strong>: Evaluation of Global Index</p>
-						<ol class="lit1 fragment" style="list-style-type:none; display: block; text-align: left;">
-							<li class="lit1 fragment fade-in-fade-out">
-								<img src="images/future/rq1.png" style="max-width: 600px; display: block; margin: 0 auto;"/>
-							</li>
-							<!-- <li class="lit1 fragment fade-in-fade-out">
-										[1] Hilbert SFC 
-										 
-									</li>
-									<li class="lit1 fragment fade-in-fade-out">
-										[2] Object-based index (R-tree) 
-									</li>
-									<li class="lit1 fragment fade-in-fade-out">
-										[3] Space-based index (Quadtree)
-									
-									</li> -->
-						</ol>
-						<p class="fragment" style="text-align: left;"><strong>RQ2</strong>: Evaluation of integration approaches</p>
-						<ol  class="lit1" style="list-style-type:none; display: block; text-align: left;">
-							<li class="lit1 fragment fade-in-fade-out">
-								 <strong>RQ 2 (<em>RO 2.1</em>)</strong>: Define a full framework and complete the theoritical assesment of the two integration approaches
-							</li>
-						</ol>
-						<p class="fragment" style="text-align: left;"><strong>RQ3</strong>: Implementation, performance evaluation, & investigation of possible optimizations</p>
-						<ol  class="lit1" style="list-style-type:none; display: block; text-align: left;">
-							<li class="lit1 fragment fade-in-fade-out">
-								 <strong> <em>RO 3.1</em></strong>:
-								 <ul>
-									 <li>
-										 Integration of LiDAR models
-									 </li>
-									 <li>
-										 Integration of imagery models
-									 </li>
-									 <li>
-										 Integration of LiDAR and imagery models 
-									 </li>
-								 </ul>
-							</li>
-							<li class="lit1 fragment fade-in-fade-out">
-								<strong> <em>RO 3.2</em></strong>: Improve <em>responsetime</em> and <em>throughput</em> of integrated point, range and window queries
-								based on the devised parameter space. 
-								
-						   </li>
-						   <li class="lit1 fragment fade-in-fade-out">
-							<strong> <em>RO 3.3</em></strong>:  Investigate hyperparameter space that define spatial index structure  
-							
-					   </li>
-					   <li class="lit1 fragment fade-in-fade-out">
-						<strong> <em>RO 3.4</em></strong>:  Identify techniques to solve bottleneck(s) in <em>RO 1.4</em>,
-						<em>RO 3.2</em> and <em>RO 3.3</em>. 
-						
-				   </li>
-						</ol>
-				</section><!--/future work-->
-
-
-				
-
-				<section>
-					<h2>Q & A</h2>
-				</section>
-				<section>
-					<h2>Supporting Slides Slides</h2>
-					 
-				</section>
-
-
-
-				<section class="scrollable-slide">
-					<p>Research Question 2</p>
-					<img src="images/rq/rq2-framewor.svg" />
-				</section>
-                <section class="">
-					<p>Research Question 3</p>
-					<img src="images/rq/rq2-two.svg" />
-				</section>
-				<section>
-					<h2>HyperSepectral Imaging</h2>
-					<p>
-						HSI (Goetz1985), also known as imaging spectrometry,
-						 uses spectrometer sensors to sense spatial phenomena/objects. 
-						 HSI is capable of producing high spectral resolution images using
-						  extremely narrow spectral bands (around 10 nm wide(Schowengerdt2006)).
-						   These bands are precisely defined (Campbell2011) 
-						   and range from visible range, UV, near-IR, mid-IR to thermal-IR. 
-						   Also, it is possible to derive the full reflectance spectrum at each pixel level (Dong2017) 
-						   (Jensen2007) (Lillesand2015)[Figure A]. 
-						   Having many extremely narrow spectral bands enables distinguishing spectrally identical, 
-						   yet unique, earth materials through the use of HSI (Shippert2004).
-
-						   (Uses of HSI: geology, ecology, military, urban-sensing, and forensic (Ben2013))  
-					</p>
-					<img src="images/background/hsi.png" style="max-width: 200px;"/>
-				</section>
-
-
-
-
-
-
 				<section>
 					<section>
-                        <h2>Background</h2>
-                        <blockquote style="text-align: left; margin-left: 2px;;">
-							&#8220;Remote sensing technology based geographical mapping is a prelevent activity.&#8221;
-						</blockquote>
-						<!-- <blockquote style="text-align: left; margin-left: 2px;;">
-							&#8220;Steady evolution of mapping technology is leading to an increasing availability of multi sensor geospatial datasets (<i>Habib2018</i>)&#8221;
-						</blockquote> -->
-						
-						<p style="text-align: left; margin: 10x;">
-							Imaging Systems and Laser Scanning Systems 11
-						</p>
-						<img src="images/background/platforms.svg" style="max-width: 570px; margin: 0px;"/>	
-						<!--<div style="text-align: left; float: left;">
-							 <ul>
-								<li>
-									Imaging Systems ;
-								</li>
-								<li>Laser Scanning Systems</li>
-							</ul> 
-							<p>- Imaging Systems</p>
-							<p>- Laser Scanning Systems</p>
-							<p>- Laser Scanning Systems</p> -->
-							<!-- more Elements 
-						  </div>
-						
-						  <div id="bg_platform" style="float: right;">
-							<p data-markdown>- This is my first right element</p>
-							<p data-markdown>- This is my second rightelement</p> 
-							<a><img src="images/background/platforms.png" style="max-width: 500px;"/></a>
-							
-						
-						  </div>-->
-						  
-						<!-- <p class="fragment shrink">LiDAR and imagery data</p>
-						<p class="fragment shrink">Hyperspectral imagery data</p>
-						<p></p> -->
-					</section>
-					<section>
-						<h3>Light Detection and Ranging (LiDAR) </h3>
-						<div style="text-align: left; float: left;">
-						<ul>
-							<li class="">3D topographical mapping</li>
-							<li>3D Point Cloud</li>
-							<li>Properties
-								<ul>
-									<li>georeferenced x-, y-, z- coordinates</li>
-									<li>time-stamp</li>
-									<li>intensity, classification, etc.</li>
-								</ul>
-							</li>
-							<li>discrete LiDAR vs FWF LiDAR
-								<br/>
-								<img src="images/background/fwf.svg" style="max-width: 400px; margin: 0px;"/>
-							</li>
-							<li>Aerial LiDAR and Mobile LiDAR</li>
-						<!-- </ul><br/> -->
-						<!-- <p style="text-align: center; margin-top:0px;">
-							<img src="images/background/fwf.svg" style="max-width: 400px; margin: 0px;"/>
-							</p> -->
-						</div><!--/left div-->
-						<div style="float: right; margin-top: 25px;">
-							<div class="sketchfab-embed-wrapper">
-								<iframe title="A 3D model" width="480px;" height="360px;" src="https://sketchfab.com/models/b5f6bcce8ebc44a3b4bbb6b0fef067b3/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-								<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
-									<a href="https://sketchfab.com/3d-models/christ-c hurch-and-dublin-city-council-b5f6bcce8ebc44a3b4bbb6b0fef067b3?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Christ Church and Dublin City Council</a>
-									by <a href="https://sketchfab.com/vuvo?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Vũ Võ</a>
-									on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a><br/>
-									source (<em>Laerfer2017</em>)
-								</p>
-								
-							</div> 
-						</div><!-- /righg div-->
-					</section>
-					<section>
-						<h3>Remotely Sensed Imagery Data</h3>
-						<p>Hyperspectral Images (<em>Goetz1985</em>)</p>
-						
-						<div style="float: left;" class="oblique">
-							<p>Oblique images</p>
-							<ul >
-								<li>
-									Camery axis is deliberately <br/> (<em>Wolf2000</em>)
-								</li>
-								<!-- <li>Multiple viwing angles (better insight)</li> -->
-								<!-- <li>
-									
-								</li> -->
-							</ul>
-							<br/>
-							<div class="r-stack">
-								<img class="" src="images/background/oblique/a.jpg" style="max-width:300px;">
-								<img class="fragment" src="images/background/oblique/b.jpg" style="max-width:300px;">
-								<img class="fragment" src="images/background/oblique/d.jpg" style="max-width:300px;">
-								<img class="fragment" src="images/background/oblique/e.jpg" style="max-width:300px;">
-							  </div>
-						</div>
-						<div style="float: right;" >
-							<!-- <div style="float: left;"></div>
-							<div style="float: right;"></div> -->
-							<p>Orthorectified images </p> 
-							<ul>
-								<li>Geometric flaws corrected<br/>
-									(stright down perspective)
-								</li>
-								<li>Orthorectification</li>
-								<ul>
-									<li>pixel-by-pixel defferential rectification
-										<br/>
-										(<em>Campblell2011</em>)(<em>Lillesand2015</em>)(<em>Swann1988</em>).
-									</li>
-								</ul>
-							
-							</ul>
-							<br/>
-							<div class="r-stack">
-								<img class="" src="images/background/ortho/a.png" style="max-width:300px;">
-								<img class="fragment" src="images/background/ortho/e.png" style="max-width:300px;">
-								<img class="fragment" src="images/background/ortho/b.png" style="max-width:300px;">
-							  </div>
-						</div>
-					</section>
-					<section>
-						<h3>Proliferation of LiDAR and Remote Sense Imaing</h3>
-					</section>
-					
-						<section>
-							<h3>Litearture review</h3>
-							<p>
-								&ldquo;Scalable data systems for LiDAR and 
-								<br/>remotely sensed (RS) imagery data integration&rdquo;
-							</p>
-							<p style="text-align: left; ">
-								[1] Scalable Data Systems for Aerial LiDAR Data Management (ALDM)
-							</p>
-							<p style="text-align: left;">
-								[2] Scalable Integrated Spatial Data Systems and a discussion on their potential for LiDAR
-								and RS imagery data integration 
-							</p>
-						</section>
-						
-						<section>
-							<h4 style="">Scalable Data Systems for ALDM</h4>
-							<blockquote>
-								&#8220;Current challenges and future directions for <br/>
-								highly scalable aerial LiDAR data systems development&#8221;
-							</blockquote>
-					
-							<div style="margin-left:200px; text-align: left;">
-								<ul  >
-									<li class="fragment">
-										Areas
-										<ul class="lit1 fragment fade-in-then-out">
-											<li>Related work</li>
-											<ul>
-												<li>VanOosterom2015</li>
-												<li>Voo2016</li>
-											</ul>
-										</ul>
-										<ul class="lit1 fragment fade-in-then-out">
-											<li> State-of-art in ALDM
-											</li>
-											
-										</ul>
-										<ul class="lit1 fragment fade-in-then-out">
-											<li>Big Spatial Data Systems (BSDS)
+						<h2>Progress to Date</h2>
 	
-												<br/>
-												Hadoop-GIS, SpatialHadoop, GeoWave, 
-											</li>
-											
-										</ul>
-										<ul class="lit1 fragment fade-in-then-out">
-											<li>HPC in 3D Geo Data Mgt:
-	
-												<br/>
-												(VanOosterom2015-Oracle Exadata)
-											</li>
-											
-										</ul>
-										<ul class="lit1 fragment fade-in-then-out">
-											<li> Scalable Data Systems Deve:
-											</li>
-											
-										</ul>
-									</li>
-									<li class="fragment">Issues/Gaps
-										<ul class="lit1 fragment fade-in-then-out">
-											<li>Many systems not scalable<br/>
-											 (<em>PCS</em>, <em>LIS</em>, <em>Liu2018</em>, <em>VanOosterom2019</em>, <em>Meyer2019</em> etc.)</li>
-										</ul>
-										<ul class="lit1 fragment fade-in-then-out">
-											<li>Not exploit full potentials of LiDAR</li>
-											<ul>
-												<li>Mostly location-based queries</li>
-												<ul>
-													<li>Support for temporal analysis <br/>
-														(<em>Vo20186D</em>, <em>Laefer2018</em>, <em>PCS</em>, <em>Liu2018</em>, <em>VanOosterom2019</em>)
-														</li>
-													<li>Feature queries and aggregation queries only in non-scalable systems
-														<br/>(<em>PCS</em>, <em>VanOosterom2015-OEDM</em>)
-													</li>
-												</ul>
-												
-												<li>Data visualization, feature extraction, data sharing not prominent</li>
-											</ul>
-										</ul>
-										<ul class="lit1 fragment fade-in-then-out">
-											<li>Adoption of HPC is non-trivial</li>
-										</ul>
-									</li>
-									<li class="fragment">Recommendations</li> 
-									<img class="fragment" src="images/background/archi.svg" style="max-width: 400px;"/>
-									<!-- <ul class="lit1 fragment fade-in-then-out">
-										<li>
-											
-										</li>
-									</ul> -->
-									<!-- <ul class="lit1 fragment fade-in-then-out">
-										<li>
-											Adoption of HPC into ALS with DC
-										</li>
-									</ul> -->
+						<div class="column" style="float:left;   width: 50%;">
+							<p style="text-align:left;">1. 30 credits &#9745;</p>
+							<div style="text-align: left; float: left;">
+								<ul style="list-style: none;""  >
+									<li  style="text-align:left; font-size: 80%;" >&#9654; <strong><i>HPC</i></strong> (A-)</li>
+									<li  style="text-align:left; font-size: 80%;"> &#9654;<strong><i> Big Data Programming</i></strong> (A-)</li>
+						
 								</ul>
 							</div>
-							
-						
-							<!-- <div style="float: right;">
-							<p>
-								
-							</p>
-							</div> -->
-							
-						</section>
-						
-						<section>
-							<h4>
-								Scalable Integrated Spatial Data Systems and a discussion on their potential for <br/>LiDAR and RS imagery data integration
-							</h4>
-							<div style=" text-align: left;">
-								
-								<ul style="margin-left:200px; list-style-type:none;" >
-
-
-									<li class="lit1 fragment fade-in-then-out">
-										Data Storage Models Integration
-										<br/>
-										<img src="images/background/integration/theory-1.svg" style="max-width: 600px;   display: block; margin: 30px; auto;"/>
-									</li>
-									<li class="lit1 fragment fade-in-then-out"> Integrated Spatial Data Systems
-										<br/>
-										<img src="images/lit2/lit2_systems.svg" style="max-width: 500px;  display: block; margin: 30px auto;"/>
-									</li>
-									<li class="lit1 fragment fade-in-then-out">
-										NO COMPARABLE SYSTEMS EXISTS!
-									</li>
-								</ul>
-							</div> <!--/-->
-
-						</section >
-						
-					
-
-				</section>
-                
-                <!-- <section style="text-align: left;">
-                    <h2>Background</h2>
-					<p>There's different types of fragments, like:</p>
-					
-					
-					
-                    <p class="fragment grow">grow</p>
-                    <p class="fragment shrink">shrink</p>
-                    <p class="fragment fade-out">
-						LiDAR
-
-						<div class="sketchfab-embed-wrapper">
-							<iframe title="A 3D model" width="130" height="100" src="https://sketchfab.com/models/b5f6bcce8ebc44a3b4bbb6b0fef067b3/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-							<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
-								<a href="https://sketchfab.com/3d-models/christ-church-and-dublin-city-council-b5f6bcce8ebc44a3b4bbb6b0fef067b3?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Christ Church and Dublin City Council</a>
-								by <a href="https://sketchfab.com/vuvo?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Vũ Võ</a>
-								on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
-							</p>
-						</div>
-						
-
-					</p>
-                    <p>
-                        <span style="display: inline-block;" class="fragment fade-right">fade-right, </span>
-                        <span style="display: inline-block;" class="fragment fade-up">up, </span>
-                        <span style="display: inline-block;" class="fragment fade-down">down, </span>
-                        <span style="display: inline-block;" class="fragment fade-left">left</span>
-                    </p>
-                    <p class="fragment fade-in-then-out">fade-in-then-out</p>
-                    <p class="fragment fade-in-then-semi-out">fade-in-then-semi-out</p>
-                    <p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
-				</section> -->
-				
-				<section style="">
-					<section>
-						<h2>Research Questions</h2>
-						<p class="" style="text-align: center;">
-								&#8220;How to enable efficient access to  spatially integrated 
-								LiDAR and imagery 
-								data while ensuring  highly scalable integrated LiDAR and imagery data management?
-								&#8221;</p>
-							<span class="lit1 fragment-out"> 
-								<!-- <p>How to construct a global level spatial index, in a distributed environment, atop local  indexes of LiDAR and imagery data that are being managed in distributed storage environments?</p>
-								<p>How to identify an efficient data system architecture that enables scalable spatial integration of LiDAR and imagery data models in distributed environment(s) through the evaluation of centralized logical views and decentralized logical views of integrated LiDAR and imagery data model</p>
-								<p>How to perform scalable integration between LiDAR and imagery storage models within a data lake environment while devising a framework to evaluate the performance of the data lake for the execution of integrated point queries, range queries and window queries? </p> -->
-								<p style="text-align: left;">Impact</p>
-								<ol class="" >
-									<li><span class="">Spatial index</span> </li>
-									<li>Define a data <span class="">system architecture</span> </li>
-									<li><span class="">(i) Implementation</span> &
-									<span class="">(ii) performance evaluation & </span> and identify 
-									 (iii) bottlenecks & suggestions on optimizations. 
-									</li>
-								</ol>
-							</span>
-					</section>
-					<section>
-						<h2 style="margin-top: 70px;">Research Questions</h2>
-
-						<ol style="list-style-type:none;">
-							<li class="lit1 fragment fade-in-fade-out">
-								<p><strong>RQ1</strong>: How to construct a global level spatial index, in a distributed environment, atop local  indexes of LiDAR and imagery data that are being managed in distributed storage environments?</p>
-								<img src="images/rq/rq1.svg" style="max-width: 600px; display: block; margin: 0 auto;"/>	
-							</li>
-							<li class="lit1 fragment fade-in-fade-out">
-								<p><strong>RQ2</strong>: How to identify an efficient data system architecture that enables scalable spatial integration of LiDAR and imagery data models in distributed environment(s) through the evaluation of centralized logical views and decentralized logical views of integrated LiDAR and imagery data model</p>
-								<img src="images/rq/rq2.svg" style="max-width: 600px; display: block; margin: 0 auto;"/>
-							</li>
-							<li class="lit1 fragment fade-in-fade-out">
-								<p><strong>RQ3</strong>: How to perform scalable integration between LiDAR and imagery storage models within a data lake environment while devising a framework to evaluate the performance of the data lake for the execution of integrated point queries, range queries and window queries? </p> 
-								<img src="images/rq/rq333.svg" style="max-width: 600px; display: block; margin: 0 auto;"/>
-							</li>
-						</ol>
-						
-					</section>
-				</section>
-
-			
-
-
-				<section>
-					<h2>Future Work</h2>
-					<p style="text-align: left;"><strong>RQ 1 (<em>RO 1.4</em>)</strong>: Evaluation of Global Index</p>
-						<ol class="lit1 fragment" style="list-style-type:none; display: block; text-align: left;">
-							<li class="lit1 fragment fade-in-fade-out">
-								<img src="images/future/rq1.png" style="max-width: 600px; display: block; margin: 0 auto;"/>
-							</li>
-							<!-- <li class="lit1 fragment fade-in-fade-out">
-										[1] Hilbert SFC 
-										 
-									</li>
-									<li class="lit1 fragment fade-in-fade-out">
-										[2] Object-based index (R-tree) 
-									</li>
-									<li class="lit1 fragment fade-in-fade-out">
-										[3] Space-based index (Quadtree)
+							<div style="clear: both;"></div>
+							<p style="text-align:left;">2. Literature Survey &#9745;</p>
+							<div style="text-align: left; float: left;">
+								<ul style="list-style: none;""  >
+									<li  style="text-align:left; font-size: 80%;" >&#9654; <strong><i>Paper 1</i></strong> :  <progress id="file" max="100" value="95"> 92% </progress></li>
+									<li  style="text-align:left; font-size: 80%;"> &#9654;<strong><i> Paper 2</i></strong> : <progress id="file" max="100" value="50"> 50% </progress></li>
 									
-									</li> -->
-						</ol>
-						<p class="fragment" style="text-align: left;"><strong>RQ2</strong>: Evaluation of integration approaches</p>
-						<ol  class="lit1" style="list-style-type:none; display: block; text-align: left;">
-							<li class="lit1 fragment fade-in-fade-out">
-								 <strong>RQ 2 (<em>RO 2.1</em>)</strong>: Define a full framework and complete the theoritical assesment of the two integration approaches
-							</li>
-						</ol>
-						<p class="fragment" style="text-align: left;"><strong>RQ3</strong>: Implementation, performance evaluation, & investigation of possible optimizations</p>
-						<ol  class="lit1" style="list-style-type:none; display: block; text-align: left;">
-							<li class="lit1 fragment fade-in-fade-out">
-								 <strong> <em>RO 3.1</em></strong>:
-								 <ul>
-									 <li>
-										 Integration of LiDAR models
-									 </li>
-									 <li>
-										 Integration of imagery models
-									 </li>
-									 <li>
-										 Integration of LiDAR and imagery models 
-									 </li>
-								 </ul>
-							</li>
-							<li class="lit1 fragment fade-in-fade-out">
-								<strong> <em>RO 3.2</em></strong>: Improve <em>responsetime</em> and <em>throughput</em> of integrated point, range and window queries
-								based on the devised parameter space. 
-								
-						   </li>
-						   <li class="lit1 fragment fade-in-fade-out">
-							<strong> <em>RO 3.3</em></strong>:  Further investigate hyperparameter space that define spatial index structure and 
-							assess their influence on performance of queries. 
-							
-					   </li>
-					   <li class="lit1 fragment fade-in-fade-out">
-						<strong> <em>RO 3.4</em></strong>:  Identify techniques to solve bottleneck(s) in <em>RO 1.4</em>,
-						<em>RO 3.2</em> and <em>RO 3.3</em>. 
+								</ul>
+							</div>
+							<div style="clear: both;"></div>
+							<p style="text-align:left;">3. RQ 1: Global index </p>
+							<div style="text-align: left; float: left;">
+								<ul style="list-style: none;" >
+									<li  style="text-align:left; font-size: 80%;" >&#9654; review spatial indexes</li>
+									<li  style="text-align:left; font-size: 80%;">&#9654; local testing/ distributed testing</li>
+									<li  style="text-align:left; font-size: 80%;"> &#9654; implemented <em>Vo et al. (2018)</em></li>
+								</ul>
+							</div>
+							<div style="clear: both;"></div>
+						</div><!--/div -->
+						<div class="column" style="float:right;   width: 50%;">
+							<p style="text-align:left;">3. RQ 1: Global index (contd)  </p>
+							<img src="images/progress/rq_1_new.svg" style="max-width: 400px; display: block; margin: 10px auto;"/>
+						</div>
+	
+						<div style="clear: both;"></div>
+					</section>
+					<section>
+						<h2>Progress to Date</h2>
+						<div class="column" style="float:left;   width: 33%;">
+							<p style="text-align:left;">4. RQ 2: Architecture</p>
+							 
+							<div style="text-align: left; float: left;">
+								<ul style="list-style: none; "  >
+									<li  style="text-align:left; font-size: 80%;" >  &#9654; <strong>RO 2.1</strong> : Framework <span style="font-size: 70%;"></span>   </li>
+									<li  style="text-align:left; font-size: 80%;" >  &#9654; <strong>RO 2.2</strong>: UrbanARK    &#9745; </li>
 						
-				   </li>
-						</ol>
+								</ul>
+							</div>
+							<!-- <img src="images/feedback/RQ2-vision.svg" style="max-height: 200px; display: block; margin: 10px auto;"/> -->
+							
+							<div style="clear: both;"></div>
+							<p style="text-align:left;">5. RQ 3: Data Lake   </p>
+							<div style="text-align: left; float: left;">
+								<ul style="list-style: none;"  >
+									<li  style="text-align:left; font-size: 80%;" >  &#9654; <strong>RO 3.1</strong> : Integration   </li>
+									<!-- <li>  &#9654; <strong>RO 3.2</strong>: Performance </li> -->
+									<ul style="text-align:left; font-size: 80%;">
+										<li>images geo-referenced   &#9745; </li>
+										<li>meta-data collected   &#9745; </li>
+										<li>integration tests are planned<br/><br/></li>
+										
+										<!-- <li>Local </li> -->
+									</ul>
+									<li  style="text-align:left; font-size: 80%;" >  &#9654; <strong>RO 3.2</strong> : Performance<br/> [LiDAR encoding]   </li>
+									<ul style="text-align:left; font-size: 80%;">
+										<li>IEEE BigData (2019)</li>
+										<li>ISPRS Congress 2020</li>
+										<!-- <li>Local </li> -->
+									</ul>
+								</ul>
+								<!-- <img src="images/progress/geo.png" style="max-width: 400px; display: block; margin: 10px auto;"/>
+								<p style="font-size: 40%; margin-top: 0px;">Figure: Image data geo-referencing</p> -->
+								 
+							</div>
+						</div><!--/div -->
+						<div class="column" style="float:left;   width: 45%;">
+							<!-- <p style="text-align:left;">5. RQ 3: Data Lake (contd)  </p> -->
+							<!-- <img src="images/progress/rq_1_new.svg" style="max-width: 400px; display: block; margin: 10px auto;"/> -->
+							<div style="text-align: left; float: left;">
+								<ul style="list-style: none; text-align: left;"  >
+									<li  style="text-align:left; font-size: 80%;" >  &#9654; <strong>RO 3.2</strong> : LiDAR encoding (contd)   </li>
+									<!-- <li>  &#9654; <strong>RO 3.2</strong>: Performance </li> IEEE BigData 2019, [2] 
+
+-->
+									<!-- <ul style="text-align:left; font-size: 80%;">
+										<li>IEEE BigData (2019)</li>
+										<li>ISPRS Congress 2020</li> -->
+										<!-- <li>Local </li> -->
+									
+								</ul>
+								<!-- <img src="images/progress/progress_to_date.png" style="max-width: 380px; display: block; margin: 5px auto;"/> -->
+								<img src="images/progress/progress_to_date-2.png" style="max-width: 486px; display: block; margin: 10px auto;"/>
+								 
+								<!-- <div style="text-align: center;">
+									<img src="images/paper/hfile_gen.png" style="max-width: 276px; display: block; margin: 5px auto;"/>
+									<p style="font-size: 0.35em; margin-top: 1px;"><b>Figure: Data loading time improvement</b></p>
+								</div> -->
+								
+								
+						
+								<!-- <img src="images/paper/hfile_gen.png" style="max-width: 276px; display: block; margin: 5px auto;"/>
+								<p style="font-size: 0.35em; margin-top: 1px;"><b>Figure: Data loading time improvement</b></p> -->
+							</div>
+							<!-- <div style="float:right; width: 10%;">
+								<div style="text-align: center;">
+									<img src="images/paper/hfile_gen.png" style="max-width: 276px; display: block; margin-top: 100px auto;"/>
+									<p style="font-size: 0.35em; margin-top: 1px; overflow:visible;"><b>Figure: Data loading time improvement</b></p>
+								</div>
+							</div> -->
+						</div>
+						<div style="clear: both;"></div>
+					</section>
 				</section>
-               
-				
 				
 
-				<!-- Example of nested vertical slides -->
 
-				
+
+                <section>
+					<h2>Future Plan</h2>
+					<div style="text-align: left; ">
+						<ul style=" text-align: left;">
+							<li>Continue Literature</li>
+							<li>RO 1.4 - evaluate global index</li>
+							<li>RO 2.1 - complete conceptual framework</li>
+							<li>All objectives of RQ 3</li>
+							<li>Publications</li>
+						</ul>
+					</div>
+					
+                    <img src="images/future/sta_tl_sta.svg" style="max-width: 900px; display: block; margin: 0 auto;"/>
+                    
+				</section>
 				<section>
-					<h3>Oblique and Ortho images more</h3>
+					<h2>
+						Q & A
+					</h2>
+					<p style="text-align: left;">Targeted conferences and journals</p>
+						<ul style="font-size:x-large; text-align: left;">
+							<li>ISPRS Congress - <em>The top conference on remote sensing data management</em>.</li>
+							<li>3D GeoInfo - <em>One of the top conference on 3D data management</em>.</li>
+							<li>Remote Sensing of Environment (Elsevier) - <em>Impact factor (2019): 9.085.
+							The most prestigious journal to publish research on remote sensing</em></li>
+							<li>ISPRS Journal of Photogrammetry and Remote sensing (Elsevier) - <em>Impact
+								Factor (2019): 7.319</em></li>
+							<li>
+								International Journal of Digital Earth (Taylor & Francis) - <em> Impact Factor (2019):
+	3.097 </em>
+							</li>
+						</ul>
+				</section>
+				<section>
+					<h3>Additional slides</h3>
+				</section>
+				<section>
+					<h4>Novelty</h4>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Evaluation</h2>
+					<div style="text-align: left; ">
+						<ul style=" text-align: left;">
+							<li>RQ 1 & RQ 3 - experimentally with testable hypothesis</li>
+							<li>RQ 2 theoretically (qualitatively: <span style="font-size: x-large;">different case studies, frameworks etc. </span>)</li>
+						</ul>
+					</div>
+					<div style="clear: both;"></div>
+					<div style="  float: left; width: 50%; font-size: x-large;">
+						<p style="font-size: 1.2em;">RQ 1</p>
+						<div style="text-align: left; ">
+							<ul style=" text-align: left;">
+								<li>query response time</li>
+								<li>index construction time</li>
+								<li>load to database</li>
+								<li>index space requirement</li>
+								<li>data index ratio</li>
+								<li>throughput</li>
+								<li>management of index in the distributed environment</li>
+							</ul>
+						</div>
+						 
+					</div>
+					<div style="  float:right; width: 50%; font-size: x-large;">
+						<p style="font-size: 1.2em;">RQ 3</p>
+						<table class="reveal" style="font-size: x-large;">
+							<thead><tr>
+								<th>Area</th>
+								<th>Experimental settings</th>
+								 
+							</tr></thead>
+							<tr>
+							  <td>data volume </td>
+							  <td> small, medium, large </td>  
+							</tr>
+							<tr>
+								<td>cluster size</td>
+								<td>2, 4, 8, 16, ...</td>
+							</tr>
+							<tr>
+								<td>encoding </td>
+								<td>LiDAR encoding<br/>
+									Image encoding</td>
+							</tr>
+							<tr>
+								<td> data distribution</td>
+								<td>default distribution of data <br/>
+									dedicated nodes for LiDAR and imagery data<br/>
+									dedicated nodes based on spatial region</td>
+							</tr>
+							<tr>
+								<td> management of global index </td>
+								<td> default <br/> replicate </td>
+							</tr>
+						  </table>
+					</div>
+					<div style="clear: both;"></div>
 				</section>
 			
+			<section>
+				<h3>RQ 2: Framework</h3>
+				<img src="images/feedback/RQ2-vision.svg" style="max-width: 800px; display: block; margin: 0 auto;"/>
+			</section>
+			<section>
+				<section>
+					<h3>Encoding</h3>
+					<div style="float: left; width: 50%;">
+						<img src="images/paper/hfile_gen.png" style="max-width: 480px; display: block; margin: 0 auto;"/>
+						<p style="font-size: 50%;">Fig. Data loading time improvement</p>
+					</div>
+					<div style="float: right; width: 50%;">
+						<img src="images/paper/table_sizes.png" style="max-width: 400px; display: block; margin: 0 auto;"/>
+						<p style="font-size: 50%;">Fig. Improvement in disk utilization</p>
+					</div>
+				</section>
+				<section>
+					
+					<h3>Encoding</h3>
+					<div style="float: left; width: 50%;">
+						<img src="images/paper/pq_uncompressed.png" style="max-width: 480px; display: block; margin: 0 auto;"/>
+						<p style="font-size: 50%;">Fig. Point query response time - uncompressed</p>
+					</div>
+					<div style="float: right; width: 50%;">
+						<img src="images/paper/pq_compressed.png" style="max-width: 480px; display: block; margin: 0 auto;"/>
+						<p style="font-size: 50%;">Fig. Point query response time - compressed</p>
+					</div>
+					
+				</section>
 
+				<section>
+					
+					<h3>Encoding</h3>
+					<div style="float: left; width: 50%;">
+						<img src="images/paper/rq_uncompressed.png" style="max-width: 480px; display: block; margin: 0 auto;"/>
+						<p style="font-size: 50%;">Fig. Range query response time - uncompressed</p>
+					</div>
+					<div style="float: right; width: 50%;">
+						<img src="images/paper/rq_compressed.png" style="max-width: 480px; display: block; margin: 0 auto;"/>
+						<p style="font-size: 50%;">Fig. Range query response time - compressed</p>
+					</div>
+					
+				</section>
+				
+			</section>
 			</div>
 
 		</div>
